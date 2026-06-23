@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: wilayah_backend
+    ports:
+      - "3032:3002"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      # Map the CSV file so the backend seeding logic works if the DB is empty
+      - ./wilayah_bps_2025.csv:/wilayah_bps_2025.csv
+    environment:
+      - PORT=3002
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: wilayah_frontend
+    ports:
+      - "5151:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    restart: unless-stopped
