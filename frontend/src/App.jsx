@@ -7,16 +7,16 @@ import Login from './pages/Login';
 
 const Navigation = () => {
   const location = useLocation();
-  
+
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
-        <MapPin color="#e70000" />
-        <span>API Wilayah</span>
+      <div className="navbar-brand" style={{ gap: '0.75rem' }}>
+        <img src="/logo.png" alt="Logo" style={{ width: '32px', height: '32px', borderRadius: '6px' }} />
+        <span>API Kode Wilayah</span>
       </div>
       <div className="nav-links">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -45,13 +45,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route 
-            path="/admin" 
+          <Route
+            path="/admin"
             element={
               <PrivateRoute>
                 <Admin />
               </PrivateRoute>
-            } 
+            }
           />
         </Routes>
       </div>
