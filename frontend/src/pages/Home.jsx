@@ -85,7 +85,7 @@ const Home = () => {
       <header style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <h1>API Kode Wilayah Indonesia</h1>
         <p style={{ color: 'var(--text-secondary)' }}>
-          Data wilayah komprehensif, diperbarui untuk tahun 2026.
+          Kode dan Data Wilayah Administrasi Pemerintahan Indonesia.
         </p>
       </header>
 
@@ -171,6 +171,22 @@ const Home = () => {
       </section>
 
       <ApiPlayground />
+
+      <footer style={{ textAlign: 'center', marginTop: '4rem', marginBottom: '2rem', color: 'var(--text-secondary)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+        <span>Referensi data:</span> 
+        <a href="https://sig.bps.go.id/bridging-kode/" target="_blank" rel="noopener noreferrer" style={{ 
+          background: 'var(--accent-color)', 
+          color: '#ffffff', 
+          padding: '0.3rem 0.8rem', 
+          borderRadius: '20px', 
+          textDecoration: 'none', 
+          fontWeight: '500',
+          boxShadow: '0 2px 4px rgba(231,0,0,0.2)',
+          transition: 'all 0.2s'
+        }}>
+          bps.go.id
+        </a>
+      </footer>
     </div>
   );
 };
