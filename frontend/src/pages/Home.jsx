@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Database, LayoutGrid, MapPin, Search } from 'lucide-react';
 import ApiPlayground from '../components/ApiPlayground';
 
-const API_BASE = 'http://localhost:3032/api/v1';
+const API_BASE = import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' ? 'http://localhost:3032/api/v1' : `${window.location.protocol}//${window.location.hostname}:3032/api/v1`);
 
 const Home = () => {
   const [stats, setStats] = useState({ provinsi: 0, kabupaten: 0, kecamatan: 0, desa: 0 });

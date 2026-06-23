@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE = 'http://localhost:3032/api/v1';
+const API_BASE = import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' ? 'http://localhost:3032/api/v1' : `${window.location.protocol}//${window.location.hostname}:3032/api/v1`);
 
 const Login = () => {
   const [username, setUsername] = useState('');

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Edit, Trash2, Plus, X, LogOut, KeyRound } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE = 'http://localhost:3032/api/v1';
+const API_BASE = import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' ? 'http://localhost:3032/api/v1' : `${window.location.protocol}//${window.location.hostname}:3032/api/v1`);
 
 const Admin = () => {
   const [data, setData] = useState([]);
