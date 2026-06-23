@@ -8,6 +8,12 @@ export default defineConfig({
     allowedHosts: [
       'kodewilayah.my.id',
       'www.kodewilayah.my.id'
-    ]
+    ],
+    proxy: {
+      '/api': {
+        target: 'http://backend:3002',
+        changeOrigin: true,
+      }
+    }
   }
 })

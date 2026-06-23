@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const API_BASE = import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' ? 'http://localhost:3032/api/v1' : `${window.location.protocol}//${window.location.hostname}:3032/api/v1`);
+const API_BASE = '/api/v1';
 
 const EndpointPlayground = ({ method, path, description, paramsConfig = [], hasBody = false, defaultBody = '' }) => {
   const [params, setParams] = useState({});
